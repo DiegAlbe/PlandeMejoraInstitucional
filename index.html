@@ -3,264 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PMI - Fomento a la Lectura Crítica | UCU</title>
+    <title>Presentación Integral: PMI Lectura Crítica - UCU</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .font-serif { font-family: 'Playfair Display', serif; }
         .tab-content { display: none; }
-        .tab-content.active { display: block; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="bg-stone-50 text-stone-800 antialiased selection:bg-amber-200">
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200 px-6 py-4 flex justify-between items-center shadow-xs">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 px-6 py-4 flex justify-between items-center shadow-xs">
         <div class="flex items-center space-x-3">
-            <div class="bg-amber-800 text-white p-2 rounded-lg font-serif font-bold text-xl tracking-tight shadow-sm">UCU</div>
+            <div class="bg-amber-850 text-white px-3 py-1.5 rounded-lg font-serif font-bold text-xl tracking-tight shadow-sm">UCU</div>
             <div>
-                <span class="block font-bold text-xs uppercase tracking-widest text-amber-800">Plan de Mejora</span>
-                <span class="block text-sm font-medium text-stone-500">Lectura Crítica 2026</span>
+                <span class="block font-bold text-xs uppercase tracking-widest text-amber-800">Plan de Mejora Institucional</span>
+                <span class="block text-xs font-medium text-stone-500">Programa de Formación Docente</span>
             </div>
         </div>
-        <div class="hidden md:flex space-x-6 text-sm font-medium text-stone-600">
-            <a href="#inicio" class="hover:text-amber-700 transition">Inicio</a>
+        <div class="hidden lg:flex space-x-6 text-xs uppercase tracking-wider font-semibold text-stone-600">
             <a href="#diagnostico" class="hover:text-amber-700 transition">Diagnóstico</a>
-            <a href="#marco-teorico" class="hover:text-amber-700 transition">Enfoques Disciplinares</a>
-            <a href="#propuesta" class="hover:text-amber-700 transition">Estrategia EDA</a>
-            <a href="#cronograma" class="hover:text-amber-700 transition">Cronograma</a>
+            <a href="#marcos-teoricos" class="hover:text-amber-700 transition">Fundamentación</a>
+            <a href="#acciones" class="hover:text-amber-700 transition">Acciones</a>
+            <a href="#dispositivo-eda" class="hover:text-amber-700 transition">Modelo EDA</a>
+            <a href="#cronograma-gantt" class="hover:text-amber-700 transition">Cronograma</a>
+            <a href="#indicadores-evaluacion" class="hover:text-amber-700 transition">Evaluación</a>
+            <a href="#riesgos-viabilidad" class="hover:text-amber-700 transition">Riesgos</a>
         </div>
     </nav>
 
-    <header id="inicio" class="relative overflow-hidden bg-gradient-to-br from-stone-900 via-stone-800 to-amber-950 text-white py-24 px-6 md:px-12 min-h-[80vh] flex items-center">
-        <div class="max-w-4xl mx-auto z-10">
-            <span class="inline-block bg-amber-700/30 text-amber-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-amber-500/30 mb-6">Propuesta de Intervención Institutional — UCU</span>
+    <header class="relative overflow-hidden bg-gradient-to-br from-stone-950 via-stone-900 to-amber-950 text-white py-24 px-6 md:px-16 min-h-[70vh] flex items-center">
+        <div class="max-w-5xl mx-auto z-10">
+            <div class="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full mb-6">
+                <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-bold font-mono tracking-widest uppercase text-amber-300">Convocatoria Mayo 2026</span>
+            </div>
             <h1 class="font-serif text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
                 Fortalecimiento de la <span class="italic text-amber-400">Lectura Crítica</span> mediante el acompañamiento docente
             </h1>
-            <p class="text-stone-300 text-lg md:text-xl font-light mb-8 max-w-3xl leading-relaxed">
-                Propuesta de intervención institucional diseñada para la Universidad de Concepción del Uruguay, orientada a transformar la lectura de una mera decodificación lineal a una verdadera construcción social y epistemológica de significado.
+            <p class="text-stone-300 text-base md:text-lg font-light mb-8 max-w-3xl leading-relaxed">
+                Propuesta de intervención institucional diseñada para la Universidad de Concepción del Uruguay (UCU). Un abordaje sistémico y situado para superar la lectura lineal como decodificación y promover la autonomía intelectual en las aulas.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#diagnostico" class="bg-amber-600 hover:bg-amber-500 text-white font-medium px-6 py-3 rounded-lg shadow-md transition flex items-center justify-center space-x-2">
-                    <span>Ver Diagnóstico</span>
-                    <i class="fas fa-arrow-right text-xs"></i>
-                </a>
-                <a href="#marco-teorico" class="bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-3 rounded-lg border border-white/20 transition backdrop-blur-xs">
-                    Abordaje del Equipo
-                </a>
+            <div class="flex flex-wrap gap-4 pt-4 border-t border-stone-800 text-xs text-stone-400 font-medium">
+                <div><span class="text-stone-500">Coordinadora:</span> Lic. María de los Ángeles Centurión</div>
+                <div class="text-stone-700">•</div>
+                <div><span class="text-stone-500">Ámbito:</span> Universidad de Concepción del Uruguay</div>
             </div>
         </div>
     </header>
 
     <section id="diagnostico" class="py-20 px-6 max-w-6xl mx-auto border-b border-stone-200">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">El Problema y su Diagnóstico</h2>
-            <p class="text-stone-600">
-                A la luz de la Ley de Educación Superior N.° 24.521, la universidad debe formar ciudadanos críticos. Sin embargo, los datos relevados evidencian una brecha entre las competencias esperadas y las prácticas efectivas.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-xs">
-                <div class="text-amber-700 text-2xl mb-3"><i class="fas fa-paste"></i></div>
-                <h3 class="font-bold text-lg text-stone-900 mb-2">Actas de Cátedra</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    Revelan que en las asignaturas piloto el 45% de las respuestas evidenciaban mala interpretación de consignas o ausencia de argumentación basada en el texto.
-                </p>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-xs">
-                <div class="text-amber-700 text-2xl mb-3"><i class="fas fa-comments"></i></div>
-                <h3 class="font-bold text-lg text-stone-900 mb-2">Entornos Virtuales</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    En foros virtuales, el 70% de las intervenciones consisten en la reproducción literal de fragmentos sin análisis propio ni posición argumentada.
-                </p>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-xs">
-                <div class="text-amber-700 text-2xl mb-3"><i class="fas fa-exclamation-triangle"></i></div>
-                <h3 class="font-bold text-lg text-stone-900 mb-2">Falsa Lectura</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    El 68% de los estudiantes admite no leer textos completos y el 60% no pudo resumir correctamente el argumento central de un texto académico de una página.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="marco-teorico" class="py-20 bg-stone-100 px-6 border-b border-stone-200">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-xs uppercase tracking-widest font-bold text-amber-800">Fortaleza del Equipo</span>
-                <h2 class="font-serif text-3xl md:text-4xl font-bold mt-2 mb-4">Marcos Teóricos por Perfil</h2>
-                <p class="text-stone-600">La heterogeneidad disciplinar del equipo se articula en un enfoque coherente y multi-referenciado.</p>
-            </div>
-
-            <div class="flex flex-wrap justify-center gap-2 mb-8 bg-stone-200 p-1.5 rounded-xl max-w-3xl mx-auto">
-                <button onclick="switchTab('nutricionistas')" id="btn-nutricionistas" class="tab-btn flex-1 min-w-[180px] px-4 py-2.5 rounded-lg text-sm font-medium transition bg-white shadow-xs text-amber-900 font-semibold">
-                    <i class="fas fa-apple-whole mr-2"></i>Nutrición (Diego y Eli)
-                </button>
-                <button onclick="switchTab('biotecnologa')" id="btn-biotecnologa" class="tab-btn flex-1 min-w-[180px] px-4 py-2.5 rounded-lg text-sm font-medium transition text-stone-600 hover:text-stone-900">
-                    <i class="fas fa-dna mr-2"></i>Biotecnología (Cintia)
-                </button>
-                <button onclick="switchTab('psicopedagoga')" id="btn-psicopedagoga" class="tab-btn flex-1 min-w-[180px] px-4 py-2.5 rounded-lg text-sm font-medium transition text-stone-600 hover:text-stone-900">
-                    <i class="fas fa-brain mr-2"></i>Psicopedagogía (Sofía)
-                </button>
-            </div>
-
-            <div id="nutricionistas" class="tab-content active bg-white p-6 md:p-8 rounded-2xl shadow-xs max-w-4xl mx-auto">
-                <div class="flex justify-between items-center border-b border-stone-100 pb-4 mb-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-stone-900">Alfabetización Académica</h3>
-                        <p class="text-xs text-stone-500 mt-1">Responsables: Diego Albeira (Presencial) y Elizabeth Cummins (Virtual)</p>
-                    </div>
-                    <span class="text-xs bg-amber-50 text-amber-900 px-2.5 py-1 rounded font-mono border border-amber-200">Carlino, P.</span>
-                </div>
-                <p class="text-stone-600 leading-relaxed">
-                    Sustentan que la lectura crítica es una práctica epistemológica situada en cada disciplina. La UCU debe enseñarla explícitamente dado que ingresar a la universidad implica adentrarse en una cultura discursiva nueva. El EDA (Ecosistema Digital de Acreditación) operacionaliza este principio obligando al estudiante a leer antes de participar.
-                </p>
-            </div>
-
-            <div id="biotecnologa" class="tab-content bg-white p-6 md:p-8 rounded-2xl shadow-xs max-w-4xl mx-auto">
-                <div class="flex justify-between items-center border-b border-stone-100 pb-4 mb-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-stone-900">Estudios de Ciencia y Tecnología (STS)</h3>
-                        <p class="text-xs text-stone-500 mt-1">Responsable: Cintia Principi (Biotecnóloga)</p>
-                    </div>
-                    <span class="text-xs bg-amber-50 text-amber-900 px-2.5 py-1 rounded font-mono border border-amber-200">Latour, B. & Knorr-Cetina, K.</span>
-                </div>
-                <p class="text-stone-600 leading-relaxed">
-                    Aporta el análisis crítico enfocado en papers y literatura científica. Un artículo científico es una construcción retórica, no un reporte neutro de la realidad. Leer críticamente significa interrogar el texto para detectar supuestos, sesgos, intereses institucionales y los límites del conocimiento producido.
-                </p>
-            </div>
-
-            <div id="psicopedagoga" class="tab-content bg-white p-6 md:p-8 rounded-2xl shadow-xs max-w-4xl mx-auto">
-                <div class="flex justify-between items-center border-b border-stone-100 pb-4 mb-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-stone-900">Psicología Cognitiva y Neuropsicología</h3>
-                        <p class="text-xs text-stone-500 mt-1">Responsable: Sofía Chaia (Psicopedagoga)</p>
-                    </div>
-                    <span class="text-xs bg-amber-50 text-amber-900 px-2.5 py-1 rounded font-mono border border-amber-200">Solé / Vygotski / Kintsch / Dehaene</span>
-                </div>
-                <p class="text-stone-600 leading-relaxed">
-                    Define la comprensión lectora como un proceso activo que exige la enseñanza explícita de estrategias (inferir, resumir, cuestionar) y la mediación del docente en la Zona de Desarrollo Próximo (ZDP). Fundamenta la división didáctica estructurada en tres momentos esenciales de andamiaje: antes, durante y después de la lectura.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="propuesta" class="py-20 px-6 max-w-6xl mx-auto border-b border-stone-200">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div class="lg:col-span-5">
-                <span class="text-xs uppercase tracking-widest font-bold text-amber-800">Funcionamiento Técnico</span>
-                <h2 class="font-serif text-3xl font-bold mt-2 mb-6">Plataforma EDA (Moodle)</h2>
-                <p class="text-stone-600 mb-6 leading-relaxed">
-                    Se adopta Moodle, disponible en la institución, configurando la actividad <strong>'Foro con calificación'</strong> con el parámetro de pregunta obligatoria previa para garantizar la trazabilidad de los datos.
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-800 bg-amber-100 px-2 py-1 rounded">1. Diagnóstico Institucional</span>
+                <h2 class="font-serif text-3xl font-bold text-stone-950 mt-3 mb-6">Brecha de Competencias Lectoras</h2>
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                    La intervención surge al reconocer una distancia significativa entre las competencias lectoras esperadas en el nivel universitario y las prácticas efectivas observadas en la UCU. Aunque la <strong>Ley de Educación Superior N.° 24.521</strong> establece el mandato de formar ciudadanos críticos y reflexivos, la lectura crítica no es una práctica sistemáticamente promocionada, enseñada ni evaluada en el currículum.
                 </p>
-                <div class="space-y-4">
-                    <div class="flex items-start space-x-3">
-                        <div class="bg-amber-100 text-amber-800 p-2 rounded-full text-xs font-bold mt-1">1</div>
-                        <div>
-                            <h4 class="font-semibold text-stone-900 text-sm">Antes (48 hs previas)</h4>
-                            <p class="text-xs text-stone-500">El docente sube un fragmento denso (máximo 2 páginas) junto a una pregunta inferencial abierta que requiere análisis autónomo.</p>
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                    Se identifica que los docentes suelen delegar el análisis e interpretación exclusivamente en el alumnado mediante trabajos individuales o entre pares, manifestando un rol pasivo donde no se modelan estrategias de análisis complejas que luego son exigidas en las evaluaciones.
+                </p>
+                <div class="bg-amber-900 text-amber-50 p-5 rounded-xl text-xs leading-relaxed font-medium">
+                    <i class="fas fa-exclamation-circle mr-2 text-amber-300"></i><strong>Conclusión del diagnóstico:</strong> Existe una brecha sistemática entre la lectura como decodificación (práctica dominante observada) y la lectura como construcción de significado situado y crítico (expectativa académica institucional).
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <h3 class="font-bold text-stone-900 text-sm uppercase tracking-wider mb-4 font-mono text-stone-500">Herramientas para la evaluación in situ - Evidencias</h3>
+                <div class="space-y-3">
+                    <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-xs flex items-start space-x-4">
+                        <div class="bg-stone-100 p-2.5 rounded-lg text-amber-800"><i class="fas fa-file-signature text-base"></i></div>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-bold text-stone-900 uppercase tracking-wide">Análisis de actas de cátedra (2025-2026)</h4>
+                            <p class="text-xs text-stone-650 mt-1">En 4 asignaturas piloto de los autores, el <strong>45% de las respuestas</strong> a preguntas abiertas evidenciaban mala interpretación de consignas o ausencia de argumentación basada en el texto.</p>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-3">
-                        <div class="bg-amber-100 text-amber-800 p-2 rounded-full text-xs font-bold mt-1">2</div>
-                        <div>
-                            <h4 class="font-semibold text-stone-900 text-sm">Durante (Bloqueo Estándar)</h4>
-                            <p class="text-xs text-stone-500">El estudiante debe responder para desbloquear las contribuciones de sus pares. En el aula, se retoman los patrones de error para el debate reflexivo.</p>
+
+                    <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-xs flex items-start space-x-4">
+                        <div class="bg-stone-100 p-2.5 rounded-lg text-amber-800"><i class="fas fa-comments-text text-base"></i></div>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-bold text-stone-900 uppercase tracking-wide">Entrevista a 3 coordinadores de carrera</h4>
+                            <p class="text-xs text-stone-650 mt-1">Coinciden unánimemente en que los estudiantes ingresan con una <strong>"falsa lectura"</strong>: subrayan estructuras sin comprender y reproducen contenidos sin analizar.</p>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-3">
-                        <div class="bg-amber-100 text-amber-800 p-2 rounded-full text-xs font-bold mt-1">3</div>
-                        <div>
-                            <h4 class="font-semibold text-stone-900 text-sm">Después (Rúbrica Corta)</h4>
-                            <p class="text-xs text-stone-500">Evaluación ágil bajo escala de 0 a 2 puntos que mide: respuesta correcta, cita adecuada y nivel de reelaboración personal.</p>
+
+                    <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-xs flex items-start space-x-4">
+                        <div class="bg-stone-100 p-2.5 rounded-lg text-amber-800"><i class="fas fa-users-class text-base"></i></div>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-bold text-stone-900 uppercase tracking-wide">Encuesta rápida a 50 estudiantes (Piloto)</h4>
+                            <p class="text-xs text-stone-650 mt-1">El <strong>68% admite</strong> no leer los textos académicos completos; simultáneamente, el <strong>52% no sabe identificar</strong> la tesis central de un artículo científico.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-xs flex items-start space-x-4">
+                        <div class="bg-stone-100 p-2.5 rounded-lg text-amber-800"><i class="fas fa-user-eval text-base"></i></div>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-bold text-stone-900 uppercase tracking-wide">Prueba piloto de comprensión (30 voluntarios)</h4>
+                            <p class="text-xs text-stone-650 mt-1">El <strong>60% de los estudiantes evaluados</strong> no pudo resumir de forma correcta el argumento central de un texto académico de tan solo una página de extensión.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-xs flex items-start space-x-4">
+                        <div class="bg-stone-100 p-2.5 rounded-lg text-amber-800"><i class="fas fa-display text-base"></i></div>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-bold text-stone-900 uppercase tracking-wide">Observación de aula (Presencial y Virtual)</h4>
+                            <p class="text-xs text-stone-650 mt-1">En los foros virtuales de Moodle, el <strong>70% de las intervenciones</strong> analizadas son mera reproducción de fragmentos (copiar y pegar) sin análisis propio ni posición argumentada.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="lg:col-span-7 bg-stone-900 text-stone-200 p-6 rounded-2xl shadow-xl font-mono text-xs">
+    <section id="marcos-teoricos" class="py-20 bg-stone-100 px-6 border-b border-stone-200">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-800">2. Fundamentación Teórica</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mt-2 mb-4">Abordaje Epistemológico General</h2>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    El plan se inscribe en una concepción constructivista y sociocultural: leer es una práctica social situada (Street, 1984; Cassany, 2006). En el plano universitario, la <strong>alfabetización académica (Carlino, 2005)</strong> actúa como eje rector: la institución debe enseñar explícitamente a articular los intereses y saberes previos con un rol activo frente al texto (reflexión, retórica científica, debate y cuestionamiento).
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 mb-8 bg-stone-200 p-1.5 rounded-xl max-w-4xl mx-auto">
+                <button onclick="cambiarPestana('autor-nutricion')" id="btn-autor-nutricion" class="tab-btn flex-1 min-w-[200px] text-xs uppercase tracking-wider font-bold py-3 px-4 rounded-lg transition bg-white shadow-xs text-amber-950">
+                    <i class="fas fa-apple-whole mr-2 text-amber-800"></i>Nutrición (Diego y Eli)
+                </button>
+                <button onclick="cambiarPestana('autor-biotecnologia')" id="btn-autor-biotecnologia" class="tab-btn flex-1 min-w-[200px] text-xs uppercase tracking-wider font-bold py-3 px-4 rounded-lg transition text-stone-600 hover:text-stone-900">
+                    <i class="fas fa-dna mr-2 text-stone-500"></i>Biotecnología (Cintia)
+                </button>
+                <button onclick="cambiarPestana('autor-psicopedagogia')" id="btn-autor-psicopedagogia" class="tab-btn flex-1 min-w-[200px] text-xs uppercase tracking-wider font-bold py-3 px-4 rounded-lg transition text-stone-600 hover:text-stone-900">
+                    <i class="fas fa-brain mr-2 text-stone-500"></i>Psicopedagogía (Sofía)
+                </button>
+            </div>
+
+            <div id="autor-nutricion" class="tab-content active bg-white p-6 md:p-8 rounded-2xl border border-stone-200 max-w-4xl mx-auto shadow-xs">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 border-b border-stone-100 pb-4 mb-4">
+                    <div>
+                        <span class="text-[10px] font-mono font-bold text-amber-800 uppercase tracking-widest">Integrantes: Diego Albeira (Presencial) & Elizabeth Cummins (Virtual)</span>
+                        <h3 class="font-serif text-xl font-bold text-stone-900">Alfabetización Académica y Cultura Discursiva</h3>
+                    </div>
+                    <div class="text-xs bg-stone-100 font-mono text-stone-700 px-3 py-1 rounded border border-stone-200">Carlino, P. (2005)</div>
+                </div>
+                <p class="text-stone-600 text-sm leading-relaxed space-y-2">
+                    Aportan la tesis de que la lectura crítica es una <strong>práctica epistemológica situada</strong> en cada disciplina. Sostienen que la universidad no debe dar por supuesto que los estudiantes ya saben leer textos académicos de forma innata. Leer en este nivel exige dinámicas específicas (identificar líneas argumentales, evaluar la solidez de las evidencias e integrar fuentes múltiples) que deben enseñarse explícitamente en el aula. 
+                    <br><br>
+                    <strong>Aporte operativo:</strong> El dispositivo EDA (Ecosistema Digital de Acreditación) materializa este principio al volver mandatorio el proceso de lectura analítica reflexiva previo a la interacción presencial.
+                </p>
+            </div>
+
+            <div id="autor-biotecnologia" class="tab-content bg-white p-6 md:p-8 rounded-2xl border border-stone-200 max-w-4xl mx-auto shadow-xs">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 border-b border-stone-100 pb-4 mb-4">
+                    <div>
+                        <span class="text-[10px] font-mono font-bold text-amber-800 uppercase tracking-widest">Integrante: Cintia Principi (Biotecnóloga)</span>
+                        <h3 class="font-serif text-xl font-bold text-stone-900">Estudios de Ciencia y Tecnología (STS) & Papers</h3>
+                    </div>
+                    <div class="text-xs bg-stone-100 font-mono text-stone-700 px-3 py-1 rounded border border-stone-200">Latour, B. (1987) / Knorr-Cetina, K. (1981)</div>
+                </div>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Sustenta que un artículo científico o "paper" es una <strong>construcción retórica compleja y un producto social</strong>, descartando la noción de que constituye un reporte enteramente neutro y transparente de la naturaleza. Leer críticamente en las ciencias experimentales exige interrogar proactivamente el texto: identificar quién escribe, bajo qué supuestos teóricos, reconociendo los sesgos, las limitaciones metodológicas y las redes de interés del conocimiento producido, preparando al alumno para la escritura posterior de informes y ponencias.
+                </p>
+            </div>
+
+            <div id="autor-psicopedagogia" class="tab-content bg-white p-6 md:p-8 rounded-2xl border border-stone-200 max-w-4xl mx-auto shadow-xs">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 border-b border-stone-100 pb-4 mb-4">
+                    <div>
+                        <span class="text-[10px] font-mono font-bold text-amber-800 uppercase tracking-widest">Integrante: Sofía Chaia (Psicopedagoga)</span>
+                        <h3 class="font-serif text-xl font-bold text-stone-900">Psicología Cognitiva y Andamiaje de la Comprensión</h3>
+                    </div>
+                    <div class="text-xs bg-stone-100 font-mono text-stone-700 px-3 py-1 rounded border border-stone-200">Solé (1992) / Vygotski (1979) / Kintsch (1998) / Dehaene</div>
+                </div>
+                <p class="text-stone-600 text-sm leading-relaxed space-y-3">
+                    La comprensión es un proceso cognitivo activo que demanda la mediación docente explícita en la <strong>Zona de Desarrollo Próximo (ZDP)</strong>. Se integran los modelos teóricos de los autores de la siguiente manera:
+                </p>
+                <ul class="list-disc pl-5 text-xs text-stone-650 space-y-1.5 mt-2">
+                    <li><strong>Isabel Solé (1992):</strong> Organiza la lectura en tres momentos: <em>Antes</em> (activar conocimientos previos y predicciones), <em>Durante</em> (monitoreo, verificación y detección del hilo argumental) y <em>Después</em> (resumir, evaluar y relacionar).</li>
+                    <li><strong>Walter Kintsch (1998):</strong> Distingue la representación superficial (palabras), la base del texto (ideas explícitas) y el <strong>modelo situacional</strong> (integración profunda con el saber del lector), que define la verdadera lectura crítica.</li>
+                    <li><strong>Stanislas Dehaene (2009):</strong> Valida que la comprensión no emana únicamente de decodificar palabras en el soporte papel, sino de integrar complejos procesos lingüísticos y neurocognitivos.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="acciones" class="py-20 px-6 max-w-6xl mx-auto border-b border-stone-200">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-800">3. Ejecución Táctica</span>
+            <h2 class="font-serif text-3xl font-bold mt-1">Acciones Estratégicas y Responsables</h2>
+            <p class="text-stone-600 text-sm mt-2">Mapeo del despliegue institucional operativo y los recursos asignados del grupo.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white p-5 rounded-xl border border-stone-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start"><span class="text-xs font-bold font-mono text-amber-800">A1</span><span class="text-[10px] bg-stone-100 font-mono px-2 py-0.5 rounded text-stone-650">Meses 1-3</span></div>
+                    <h4 class="font-bold text-stone-900 text-sm mt-2 mb-1">Implementación Plataforma EDA</h4>
+                    <p class="text-xs text-stone-600 leading-relaxed">Configuración del 'Foro con pregunta obligatoria previa' en Moodle de la UCU. Diseño de 5 guías piloto de lectura.</p>
+                </div>
+                <div class="text-[11px] text-stone-500 font-medium border-t border-stone-100 pt-3 mt-4"><i class="fas fa-user-tie mr-1 text-amber-700"></i> Elizabeth Cummins + Cintia Principi</div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-stone-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start"><span class="text-xs font-bold font-mono text-amber-800">A2</span><span class="text-[10px] bg-stone-100 font-mono px-2 py-0.5 rounded text-stone-650">Meses 2, 5, 8, 11</span></div>
+                    <h4 class="font-bold text-stone-900 text-sm mt-2 mb-1">Semanas de Lectura por Facultad</h4>
+                    <p class="text-xs text-stone-600 leading-relaxed">Actividades integradas y ancladas firmemente en efemérides disciplinares (Día de la Alimentación, Día del ADN, etc.) en espacios de la UCU.</p>
+                </div>
+                <div class="text-[11px] text-stone-500 font-medium border-t border-stone-100 pt-3 mt-4"><i class="fas fa-user-tie mr-1 text-amber-700"></i> Diego Albeira + Cintia Principi</div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-stone-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start"><span class="text-xs font-bold font-mono text-amber-800">A3</span><span class="text-[10px] bg-stone-100 font-mono px-2 py-0.5 rounded text-stone-650">Trimestral</span></div>
+                    <h4 class="font-bold text-stone-900 text-sm mt-2 mb-1">Ciclo 'Autores en el Aula'</h4>
+                    <p class="text-xs text-stone-600 leading-relaxed">Encuentros estructurados con especialistas y científicos locales/nacionales para dialogar de forma directa sobre la trastienda de sus obras.</p>
+                </div>
+                <div class="text-[11px] text-stone-500 font-medium border-t border-stone-100 pt-3 mt-4"><i class="fas fa-user-tie mr-1 text-amber-700"></i> Cintia Principi + Elizabeth Cummins</div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-stone-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start"><span class="text-xs font-bold font-mono text-amber-800">A4</span><span class="text-[10px] bg-stone-100 font-mono px-2 py-0.5 rounded text-stone-650">Continuo</span></div>
+                    <h4 class="font-bold text-stone-900 text-sm mt-2 mb-1">Círculos para No Docentes</h4>
+                    <p class="text-xs text-stone-600 leading-relaxed">Encuentros de carácter quincenal abocados al debate de textos de gestión universitaria, marcos normativos institucionales y literatura general.</p>
+                </div>
+                <div class="text-[11px] text-stone-500 font-medium border-t border-stone-100 pt-3 mt-4"><i class="fas fa-user-tie mr-1 text-amber-700"></i> Sofía Chaia</div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-stone-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start"><span class="text-xs font-bold font-mono text-amber-800">A5</span><span class="text-[10px] bg-stone-100 font-mono px-2 py-0.5 rounded text-stone-650">Meses 2 y 6</span></div>
+                    <h4 class="font-bold text-stone-900 text-sm mt-2 mb-1">Capacitación Docente Situada</h4>
+                    <p class="text-xs text-stone-600 leading-relaxed">Talleres intensivos sobre 'cómo enseñar a leer en mi disciplina'. Diseño colectivo de guías, rúbricas de evaluación y preguntas inferenciales.</p>
+                </div>
+                <div class="text-[11px] text-stone-500 font-medium border-t border-stone-100 pt-3 mt-4"><i class="fas fa-user-tie mr-1 text-amber-700"></i> Sofía Chaia + Diego Albeira</div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-stone-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start"><span class="text-xs font-bold font-mono text-amber-800">A6</span><span class="text-[10px] bg-stone-100 font-mono px-2 py-0.5 rounded text-stone-650">Meses 1-4</span></div>
+                    <h4 class="font-bold text-stone-900 text-sm mt-2 mb-1">Convenios con Librerías Locales</h4>
+                    <p class="text-xs text-stone-600 leading-relaxed">Gestión estratégica y formal de descuentos comerciales, alianzas corporativas y sistemas de préstamo rotativo para asegurar soporte papel.</p>
+                </div>
+                <div class="text-[11px] text-stone-500 font-medium border-t border-stone-100 pt-3 mt-4"><i class="fas fa-user-tie mr-1 text-amber-700"></i> Diego Albeira + Elizabeth Cummins</div>
+            </div>
+        </div>
+
+        <div class="bg-stone-900 text-stone-100 p-6 md:p-8 rounded-2xl border border-stone-800">
+            <h3 class="font-serif text-xl font-bold text-amber-400 mb-4"><i class="fas fa-layer-group mr-2"></i>Ejes Temáticos Transversales de cada Encuentro</h3>
+            <p class="text-stone-400 text-xs mb-6 leading-relaxed">Contenidos articulados de manera interdisciplinar, estructurados metodológicamente desde lo general hasta lo específico para su tratamiento en el aula:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs">
+                <div class="bg-stone-950 p-4 rounded-xl border border-stone-800">
+                    <h5 class="font-bold text-white mb-1.5 uppercase tracking-wide text-amber-500/90">1. Fluidez Lectora</h5>
+                    <p class="text-stone-400 leading-relaxed">Entrenamiento sistemático en ritmo, precisión, entonación adecuada y seguimiento continuo de las ideas principales durante la lectura de textos académicos densos.</p>
+                </div>
+                <div class="bg-stone-950 p-4 rounded-xl border border-stone-800">
+                    <h5 class="font-bold text-white mb-1.5 uppercase tracking-wide text-amber-500/90">2. Niveles de Comprensión</h5>
+                    <p class="text-stone-400 leading-relaxed">Desglose e internalización de los niveles literal, inferencial y crítico. Práctica de anticipación del contenido, formulación de preguntas complejas y subrayado estratégico.</p>
+                </div>
+                <div class="bg-stone-950 p-4 rounded-xl border border-stone-800">
+                    <h5 class="font-bold text-white mb-1.5 uppercase tracking-wide text-amber-500/90">3. Vocabulario Académico</h5>
+                    <p class="text-stone-400 leading-relaxed">Identificación analítica y comprensión de tecnicismos y términos específicos de cada ciencia. Análisis contextual de significados y ampliación del repertorio léxico.</p>
+                </div>
+                <div class="bg-stone-950 p-4 rounded-xl border border-stone-800">
+                    <h5 class="font-bold text-white mb-1.5 uppercase tracking-wide text-amber-500/90">4. Actividades Metacognitivas</h5>
+                    <p class="text-stone-400 leading-relaxed">Reflexión guiada del alumno sobre su propio proceso: ¿qué le resulta complejo?, ¿qué estrategias utiliza?, ¿cómo autoevalúa y autorregula su comprensión?</p>
+                </div>
+                <div class="bg-stone-950 p-4 rounded-xl border border-stone-800">
+                    <h5 class="font-bold text-white mb-1.5 uppercase tracking-wide text-amber-500/90">5. Producción Escrita Situada</h5>
+                    <p class="text-stone-400 leading-relaxed">Elaboración formal de comentarios críticos, argumentaciones sólidas, síntesis y piezas académicas breves que fuercen la reorganización integral de la información comprendida.</p>
+                </div>
+                <div class="bg-stone-950 p-4 rounded-xl border border-stone-800">
+                    <h5 class="font-bold text-white mb-1.5 uppercase tracking-wide text-amber-500/90">6. Co-construcción de Dispositivos</h5>
+                    <p class="text-stone-400 leading-relaxed">Diseño colaborativo y andamiado entre docentes y estudiantes de guías temáticas de lectura, rúbricas analíticas de evaluación y baterías de preguntas complejas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dispositivo-eda" class="py-20 px-6 max-w-6xl mx-auto border-b border-stone-200">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-800 bg-amber-100 px-2 py-1 rounded">Dispositivo Tecnopedagógico</span>
+                <h2 class="font-serif text-3xl font-bold text-stone-950 mt-3 mb-6">El Ecosistema Digital de Acreditación (EDA)</h2>
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                    El <strong>EDA</strong> representa la traducción operativa directa del enfoque de alfabetización académica. Utiliza el campus virtual Moodle disponible en la UCU mediante un formato específico: <strong>'Foro con calificación' configurado con pregunta obligatoria previa</strong>.
+                </p>
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                    Este diseño metodológico ofrece tres ventajas institucionales clave: disponibilidad de la infraestructura tecnológica sin costos presupuestarios añadidos, consistencia plena con las políticas de virtualidad de la universidad y una perfecta trazabilidad informática de los datos que permite aplicar la investigación-acción sobre las respuestas estudiantiles.
+                </p>
+                <div class="bg-stone-100 p-4 rounded-xl border border-stone-200 text-xs text-stone-700">
+                    <h5 class="font-bold text-stone-900 mb-1">Mecanismo de Andamiaje (Vygotski, 1979)</h5>
+                    La obligatoriedad anticipada fuerza la activación de la Zona de Desarrollo Próximo (ZDP) del estudiante de forma individual 48 horas antes, sirviendo de insumo directo para el debate de errores lógicos en el encuentro presencial.
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-stone-950 text-stone-200 p-6 rounded-2xl shadow-xl font-mono text-xs border border-stone-800">
                 <div class="flex items-center justify-between border-b border-stone-800 pb-4 mb-4">
                     <div class="flex items-center space-x-2">
                         <span class="w-3 h-3 bg-red-500 rounded-full"></span>
                         <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
                         <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-                        <span class="text-stone-400 pl-2">campus.ucu.edu.ar</span>
+                        <span class="text-stone-500 pl-2 font-mono text-[10px]">moodle.ucu.edu.ar/campus</span>
                     </div>
-                    <span class="bg-amber-600/20 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded text-[10px]">CÁTEDRA: NUTRICIÓN CLÍNICA</span>
+                    <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded text-[10px] font-sans font-bold">CASO DE EJEMPLO: NUTRICIÓN CLÍNICA</span>
                 </div>
-                <div class="space-y-4">
-                    <div class="bg-stone-800 p-3 rounded-lg border border-stone-700 font-sans">
-                        <div class="text-amber-400 font-mono font-bold mb-1">[Foro EDA - Actividad Anticipatoria]</div>
-                        <p class="text-stone-300 text-xs mb-2">Lea el extracto adjunto de 2 páginas de la <em>'Guía de práctica clínica sobre diabetes tipo 2'</em> y responda:</p>
-                        <div class="bg-stone-950 p-3 rounded border border-stone-800 text-stone-300 font-mono text-xs italic">
-                            "¿Cuál es la principal contraindicación de la metformina en pacientes con insuficiencia renal? Justifique con una cita textual y luego explique con sus propias palabras."
+                
+                <div class="space-y-4 font-sans">
+                    <div class="bg-stone-900 p-4 rounded-xl border border-stone-800">
+                        <div class="text-amber-400 font-mono text-[11px] font-bold uppercase tracking-wider mb-2">Foro Obligatorio de Lectura Anticipatoria</div>
+                        <h4 class="text-white text-sm font-bold mb-1">Lectura Seleccionada: Extracto de Guía de Práctica Clínica sobre Diabetes Tipo 2</h4>
+                        <p class="text-stone-400 text-xs leading-relaxed mb-3">Estimado estudiante: Realice el análisis crítico del documento institucional adjunto (2 páginas de acceso abierto) y cumplimente la consigna antes del encuentro sincrónico:</p>
+                        
+                        <div class="bg-stone-950 p-4 rounded-lg border border-stone-800 font-mono text-xs italic text-stone-300 leading-relaxed">
+                            "¿Cuál es la principal contraindicación de la metformina en pacientes con insuficiencia renal? Justifique aportando una cita textual adecuada del fragmento y, posteriormente, explique la lógica del mecanismo con sus propias palabras."
                         </div>
                     </div>
-                    <div class="p-3 bg-amber-950/40 border border-amber-900/50 rounded-lg text-amber-300 font-sans text-xs">
-                        <i class="fas fa-lock mr-2"></i><strong>Condición de Moodle:</strong> No podrá visualizar ni interactuar con las intervenciones de sus compañeros de cursada hasta que envíe su respuesta original.
+
+                    <div class="bg-red-950/30 border border-red-900/40 p-4 rounded-xl text-red-300 text-xs flex items-start space-x-3">
+                        <i class="fas fa-lock mt-0.5"></i>
+                        <p class="leading-relaxed font-mono text-[11px]">
+                            <strong>Bloqueo Activo Moodle:</strong> Este foro está configurado en modalidad oculta. No podrá visualizar, comentar ni interactuar con las intervenciones de sus compañeros de cursada hasta que envíe su aporte original validado.
+                        </p>
+                    </div>
+
+                    <div class="pt-2 flex justify-between items-center text-[11px] text-stone-500 font-mono">
+                        <div>Rúbrica asociada: Escala corta 0 - 2 pts</div>
+                        <button class="bg-amber-600 hover:bg-amber-500 text-white px-4 py-2 rounded-lg font-sans font-semibold text-xs transition shadow-md">Responder Consigna</button>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section id="cronograma" class="py-20 bg-stone-100 px-6">
+    <section id="cronograma-gantt" class="py-20 bg-stone-100 px-6 border-b border-stone-200">
         <div class="max-w-6xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="font-serif text-3xl font-bold mb-4">Cronograma de la Fase Piloto</h2>
-                <p class="text-stone-600">
-                    Planificación de actividades correspondientes a los primeros dos cuatrimestres (6 meses). Las acciones de seguimiento y metaevaluación inician en el mes 3 para posibilitar ajustes tempranos.
-                </p>
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-800">5. Planificación Temporal</span>
+                <h2 class="font-serif text-3xl font-bold mt-1 mb-4">Cronograma Gantt de la Fase Piloto</h2>
+                <p class="text-stone-600 text-sm">Estructuración temporal de los primeros dos cuatrimestres de ejecución. Las actividades de auditoría interna se incorporan en el Mes 3 para procesar ajustes formativos tempranos.</p>
             </div>
 
-            <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm max-w-4xl mx-auto overflow-x-auto">
-                <table class="w-full text-left text-xs border-collapse min-w-[500px]">
+            <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm overflow-x-auto max-w-5xl mx-auto">
+                <table class="w-full text-xs text-left border-collapse min-w-[650px]">
                     <thead>
-                        <tr class="border-b border-stone-200 text-stone-500 uppercase tracking-wider font-mono">
-                            <th class="py-3 pr-4 font-semibold">Actividad Estratégica</th>
-                            <th class="py-3 px-2 text-center font-semibold">M1</th>
-                            <th class="py-3 px-2 text-center font-semibold">M2</th>
-                            <th class="py-3 px-2 text-center font-semibold">M3</th>
-                            <th class="py-3 px-2 text-center font-semibold">M4</th>
-                            <th class="py-3 px-2 text-center font-semibold">M5</th>
-                            <th class="py-3 px-2 text-center font-semibold">M6</th>
+                        <tr class="border-b border-stone-200 font-mono text-stone-500 uppercase tracking-wider">
+                            <th class="py-3 pr-4 font-bold">Actividades Operativas Planificadas</th>
+                            <th class="py-3 px-3 text-center font-bold">Mes 1</th>
+                            <th class="py-3 px-3 text-center font-bold">Mes 2</th>
+                            <th class="py-3 px-3 text-center font-bold">Mes 3</th>
+                            <th class="py-3 px-3 text-center font-bold">Mes 4</th>
+                            <th class="py-3 px-3 text-center font-bold">Mes 5</th>
+                            <th class="py-3 px-3 text-center font-bold">Mes 6</th>
                         </tr>
                     </thead>
-                    <tbody class="text-stone-700 font-medium divide-y divide-stone-100">
+                    <tbody class="divide-y divide-stone-100 font-medium text-stone-700">
                         <tr>
-                            <td class="py-3.5 pr-4">Diagnóstico formal (encuestas y análisis de actas)</td>
-                            <td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td></td><td></td><td></td><td></td><td></td>
+                            <td class="py-4 pr-4">Diagnóstico formal integral (procesamiento de encuestas y actas de cátedra)</td>
+                            <td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td></td><td></td><td></td><td></td><td></td>
                         </tr>
                         <tr>
-                            <td class="py-3.5 pr-4">Diseño técnico del entorno EDA en Moodle</td>
-                            <td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td></td><td></td><td></td><td></td><td></td>
+                            <td class="py-4 pr-4">Diseño e ingeniería técnica del entorno EDA en la plataforma Moodle</td>
+                            <td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td></td><td></td><td></td><td></td><td></td>
                         </tr>
                         <tr>
-                            <td class="py-3.5 pr-4">Capacitación docente (Talleres disciplinares)</td>
-                            <td></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td></td><td></td><td></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td>
+                            <td class="py-4 pr-4">Capacitación docente continua (Talleres sobre didáctica de la lectura disciplinar)</td>
+                            <td></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td></td><td></td><td></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td>
                         </tr>
                         <tr>
-                            <td class="py-3.5 pr-4">Círculos de lectura para el personal no docente</td>
-                            <td></td><td></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td>
+                            <td class="py-4 pr-4">Círculos de lectura sistemáticos orientados al personal no docente</td>
+                            <td></td><td></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td>
                         </tr>
                         <tr>
-                            <td class="py-3.5 pr-4">Lanzamiento piloto del dispositivo EDA en 2 cátedras</td>
-                            <td></td><td></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td></td><td></td>
+                            <td class="py-4 pr-4">Lanzamiento operativo piloto del dispositivo EDA en 2 cátedras específicas</td>
+                            <td></td><td></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td></td><td></td>
                         </tr>
                         <tr>
-                            <td class="py-3.5 pr-4">Gestión y firma de convenios con librerías locales</td>
-                            <td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td class="text-center text-amber-700 font-bold"><i class="fas fa-check"></i></td><td></td><td></td>
+                            <td class="py-4 pr-4">Gestión, trámite y formalización de convenios comerciales con librerías locales</td>
+                            <td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td></td><td></td>
                         </tr>
-                        <tr class="bg-amber-50/50">
-                            <td class="py-3.5 pr-4 font-semibold text-amber-950">Primera reunión institucional de seguimiento y reajustes</td>
-                            <td></td><td></td><td class="text-center text-amber-950 font-bold"><i class="fas fa-circle-check"></i></td><td></td><td class="text-center text-amber-950 font-bold"><i class="fas fa-circle-check"></i></td><td></td>
+                        <tr>
+                            <td class="py-4 pr-4">Primera "Semana de la Lectura" transversal (Facultad de Ciencias de la Salud)</td>
+                            <td></td><td></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 pr-4">Primer encuentro institucional del ciclo extensivo "Autores en el Aula"</td>
+                            <td></td><td></td><td></td><td class="text-center text-amber-700 text-lg font-bold"><i class="fas fa-square-check"></i></td><td></td><td></td>
+                        </tr>
+                        <tr class="bg-amber-50/60 font-semibold text-amber-950">
+                            <td class="py-4 pr-4 flex items-center"><i class="fas fa-arrows-spin mr-2 text-xs"></i>Primera reunión de evaluación formativa, seguimiento y reajustes</td>
+                            <td></td><td></td><td class="text-center text-amber-950 text-lg font-bold"><i class="fas fa-circle-check"></i></td><td></td><td class="text-center text-amber-950 text-lg font-bold"><i class="fas fa-circle-check"></i></td><td></td>
                         </tr>
                     </tbody>
                 </table>
@@ -268,51 +406,222 @@
         </div>
     </section>
 
-    <footer class="bg-stone-900 text-stone-400 py-16 px-6 border-t border-stone-800">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-            <div>
-                <h3 class="font-serif text-xl font-bold text-white mb-2">Plan de Mejora Institucional</h3>
-                <p class="text-sm text-stone-500 max-w-xl">
-                    Desarrollado bajo el amparo del <strong>Programa de Formación Docente</strong> de la UCU, coordinado por la <strong>Lic. María de los Ángeles Centurión</strong>.
-                </p>
-                <div class="flex flex-wrap gap-2 mt-4 text-[11px] font-semibold text-stone-200">
-                    <span class="bg-stone-800 border border-stone-700 px-3 py-1 rounded">Diego Albeira (Nutrición Presencial)</span>
-                    <span class="bg-stone-800 border border-stone-700 px-3 py-1 rounded">Elizabeth Cummins (Nutrición Virtual)</span>
-                    <span class="bg-stone-800 border border-stone-700 px-3 py-1 rounded">Cintia Principi (Biotecnología)</span>
-                    <span class="bg-stone-800 border border-stone-700 px-3 py-1 rounded">Sofía Chaia (Psicopedagogía)</span>
-                </div>
-            </div>
-            <div class="text-left md:text-right">
-                <span class="block text-xs uppercase tracking-widest text-amber-500 font-bold mb-1">Entidad Académica</span>
-                <span class="block text-sm text-white">Universidad de Concepción del Uruguay</span>
-                <span class="block text-xs text-stone-500">Entre Ríos, Argentina — Mayo 2026</span>
+    <section id="indicadores-evaluacion" class="py-20 px-6 max-w-6xl mx-auto border-b border-stone-200">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-800">6. Modelos de Evaluación</span>
+            <h2 class="font-serif text-3xl font-bold mt-1 mb-4">Métricas y Tradiciones de Seguimiento</h2>
+            <p class="text-stone-600 text-sm leading-relaxed">
+                El plan metodológico de seguimiento se sustenta firmemente en tres tradiciones evaluativas complementarias: el <strong>Modelo CIPP de Stufflebeam (1971)</strong> que audita Contexto, Insumos, Proceso y Producto; la distinción de <strong>Michael Scriven (1967)</strong> entre evaluación formativa (trimestral) y sumativa (anual); y la <strong>investigación-acción de Carr y Kemmis (1988)</strong> entendida como una oportunidad de aprendizaje profesional colectivo para el claustro docente.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-6 overflow-x-auto max-w-5xl mx-auto mb-12">
+            <h4 class="font-bold text-stone-900 text-sm uppercase font-mono tracking-wider mb-4 text-stone-500">Matriz de Objetivos e Indicadores de Impacto</h4>
+            <table class="w-full text-xs text-left border-collapse min-w-[600px]">
+                <thead>
+                    <tr class="border-b border-stone-200 font-mono text-stone-600 bg-stone-50">
+                        <th class="py-3 px-3 font-bold">Objetivo / Enfoque</th>
+                        <th class="py-3 px-3 font-bold">Indicador de Medición</th>
+                        <th class="py-3 px-3 text-center font-bold">Línea de Base</th>
+                        <th class="py-3 px-3 text-center font-bold">Meta 6 m.</th>
+                        <th class="py-3 px-3 text-center font-bold">Meta 12 m.</th>
+                        <th class="py-3 px-3 font-bold">Medio de Verificación</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-stone-100 font-medium text-stone-700">
+                    <tr>
+                        <td class="py-4 px-3 font-semibold text-stone-900">O1 (Comprensión Crítica)</td>
+                        <td class="py-4 px-3 text-stone-650">% de estudiantes que identifican la tesis central de un artículo académico</td>
+                        <td class="text-center font-mono">35 %</td>
+                        <td class="text-center font-mono text-amber-800 font-bold">50 %</td>
+                        <td class="text-center font-mono text-amber-800 font-bold">65 %</td>
+                        <td class="py-4 px-3 font-mono text-[11px] text-stone-500">Cuestionario pre/post en EDA</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-3 font-semibold text-stone-900">O2 (Acceso Democrático)</td>
+                        <td class="py-4 px-3 text-stone-650">N.º de préstamos de libros físicos por convenio comercial por semestre</td>
+                        <td class="text-center font-mono">0</td>
+                        <td class="text-center font-mono text-amber-800 font-bold">80</td>
+                        <td class="text-center font-mono text-amber-800 font-bold">200</td>
+                        <td class="py-4 px-3 font-mono text-[11px] text-stone-500">Registro formal de librerías</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-3 font-semibold text-stone-900">O3 (Participación Docente)</td>
+                        <td class="py-4 px-3 text-stone-650">% de docentes capacitados que aplican al menos una estrategia (Solé) en clase</td>
+                        <td class="text-center font-mono">10 %</td>
+                        <td class="text-center font-mono text-amber-800 font-bold">30 %</td>
+                        <td class="text-center font-mono text-amber-800 font-bold">50 %</td>
+                        <td class="py-4 px-3 font-mono text-[11px] text-stone-500">Observación de aula + autoinforme</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-3 font-semibold text-stone-900">O4 (Espacios de Debate)</td>
+                        <td class="py-4 px-3 text-stone-650">Asistencia promedio registrada a encuentros del ciclo 'Autores en el Aula'</td>
+                        <td class="text-center font-mono">0</td>
+                        <td class="text-center font-mono text-amber-800 font-bold">25</td>
+                        <td class="text-center font-mono text-amber-800 font-bold">35</td>
+                        <td class="py-4 px-3 font-mono text-[11px] text-stone-500">Planilla firmada de asistencia</td>
+                    </tr>
+                    <tr class="bg-stone-50/50">
+                        <td class="py-4 px-3 font-bold text-stone-900">De Proceso</td>
+                        <td class="py-4 px-3 text-stone-650">% de actividades estratégicas ejecutadas en fecha según el cronograma GANTT</td>
+                        <td class="text-center font-mono text-stone-400">N/A</td>
+                        <td class="text-center font-mono font-bold text-stone-900">&ge; 80 %</td>
+                        <td class="text-center font-mono font-bold text-stone-900">&ge; 90 %</td>
+                        <td class="py-4 px-3 font-mono text-[11px] text-stone-500">Actas ejecutivas de reunión</td>
+                    </tr>
+                    <tr class="bg-stone-50/50">
+                        <td class="py-4 px-3 font-bold text-stone-900">Cualitativo</td>
+                        <td class="py-4 px-3 text-stone-650">Grado de satisfacción general de participantes (Escala 1-5 Kirkpatrick)</td>
+                        <td class="text-center font-mono text-stone-400">N/A</td>
+                        <td class="text-center font-mono font-bold text-stone-900">&ge; 4,0</td>
+                        <td class="text-center font-mono font-bold text-stone-900">&ge; 4,5</td>
+                        <td class="py-4 px-3 font-mono text-[11px] text-stone-500">Encuesta anónima digital</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bg-stone-100 p-6 rounded-2xl border border-stone-200 max-w-5xl mx-auto">
+            <h4 class="font-bold text-stone-950 text-sm uppercase tracking-wide mb-3 flex items-center"><i class="fas fa-chart-pie text-amber-800 mr-2"></i>Estructura de la Metaevaluación Anual</h4>
+            <p class="text-stone-600 text-xs leading-relaxed mb-4">
+                La metaevaluación representa la evaluación del propio proceso evaluativo: permite verificar fehacientemente si los instrumentos metodológicos fueron los adecuados, si los indicadores reflejaron el fenómeno y si el seguimiento trimestral sirvió para la toma de decisiones estratégicas. Está liderada por la <strong>Psicopedagoga (Sofía Chaia)</strong> mediante las siguientes herramientas del informe:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-medium">
+                <div class="bg-white p-4 rounded-xl border border-stone-200"><span class="block font-bold text-stone-900 mb-1">Encuestas Likert</span>Aplicación de encuestas de percepción de 5 puntos (adaptadas del modelo de Donald Kirkpatrick, 1959) a docentes, estudiantes y personal no docente.</div>
+                <div class="bg-white p-4 rounded-xl border border-stone-200"><span class="block font-bold text-stone-900 mb-1">Grupos Focales</span>Muestreo representativo de participantes conducido en cámara Gesell o aula piloto (2 docentes, 3 estudiantes, 1 no docente) para evaluar fallas latentes.</div>
+                <div class="bg-white p-4 rounded-xl border border-stone-200"><span class="block font-bold text-stone-900 mb-1">Informe y Ajuste</span>Redacción y elevación del informe analítico final a las autoridades rectorales de la UCU para la reformulación total de los objetivos del ciclo lectivo posterior.</div>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto border-t border-stone-800 mt-12 pt-6 text-center text-xs text-stone-600">
-            Estructura estática interactiva optimizada para publicación directa en GitHub Pages.
+    </section>
+
+    <section id="riesgos-viabilidad" class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-800">7. Viabilidad y Contingencias</span>
+            <h2 class="font-serif text-3xl font-bold mt-1 mb-4">Gestión de Riesgos Institucionales</h2>
+            <p class="text-stone-600 text-sm">Matriz sistemática de mitigación ante desvíos técnicos, presupuestarios o de participación en la UCU.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-6 overflow-x-auto max-w-5xl mx-auto mb-12">
+            <table class="w-full text-xs text-left border-collapse min-w-[600px]">
+                <thead>
+                    <tr class="border-b border-stone-200 font-mono text-stone-600 bg-stone-50">
+                        <th class="py-3 px-3 font-bold">Riesgo Identificado</th>
+                        <th class="py-3 px-3 font-bold text-center">Probabilidad</th>
+                        <th class="py-3 px-3 font-bold text-center">Impacto</th>
+                        <th class="py-3 px-3 font-bold">Acción de Mitigación / Plan de Contingencia</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-stone-100 font-medium text-stone-700 text-xs">
+                    <tr>
+                        <td class="py-4 px-3 font-bold text-stone-900">Baja participación del claustro docente</td>
+                        <td class="text-center text-amber-800">Media</td>
+                        <td class="text-center text-red-700">Alto</td>
+                        <td class="py-4 px-3 text-stone-650">Involucrar formalmente a directores de carrera desde la fase de codiseño; ofrecer certificación académica y cómputo de horas de formación continua como incentivo formal formalizado.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-3 font-bold text-stone-900">Fallas técnicas o caídas en la plataforma EDA</td>
+                        <td class="text-center text-stone-500">Baja</td>
+                        <td class="text-center text-amber-800">Medio</td>
+                        <td class="py-4 px-3 text-stone-650"><strong>Plan B operativo:</strong> Envío de la pregunta inferencial por correo institucional. Entrega de la respuesta del alumno digitalizada mediante escaneo de soporte papel o fotografía directa.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-3 font-bold text-stone-900">Estudiantes sin conectividad a Internet estable</td>
+                        <td class="text-center text-amber-800">Media</td>
+                        <td class="text-center text-red-700">Alto</td>
+                        <td class="py-4 px-3 text-stone-650">Permitir la descarga técnica previa del texto en formato PDF para lectura offline. Habilitar formalmente la entrega vía WhatsApp institucional o fotografía de respuesta manuscrita en papel.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-3 font-bold text-stone-900">Bajo interés en Círculos de Lectura (No docentes)</td>
+                        <td class="text-center text-stone-500">Baja</td>
+                        <td class="text-center text-stone-500">Bajo</td>
+                        <td class="py-4 px-3 text-stone-650">Vincular estrechamente las lecturas elegidas a temáticas de gestión corporativa y bienestar del entorno laboral. Diversificar soportes incorporando formatos dinámicos como podcasts y artículos de prensa breves.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-3 font-bold text-stone-900">Falta de presupuesto o recursos financieros</td>
+                        <td class="text-center text-amber-800">Media</td>
+                        <td class="text-center text-red-700">Alto</td>
+                        <td class="py-4 px-3 text-stone-650">Gestionar de manera proactiva fondos concursables de extensión universitaria. Solicitar formalmente el apoyo estructural de departamentos y la donación interna de espacios físicos por parte de la UCU.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+            <div class="bg-stone-900 text-stone-100 p-6 rounded-2xl flex flex-col justify-between border border-stone-800">
+                <div>
+                    <h4 class="font-serif text-lg text-amber-400 font-bold mb-3">Presupuesto Mínimo Estimado</h4>
+                    <div class="divide-y divide-stone-800 text-xs font-medium space-y-2.5">
+                        <div class="flex justify-between pt-2"><span>Refrigerios (4 encuentros 'Autores en Aula' x 10 pers)</span><span class="text-white">ARS 40.000 approx.</span></div>
+                        <div class="flex justify-between pt-2"><span>Material de difusión institucional (Cartelería y Redes)</span><span class="text-white">ARS 25.000 approx.</span></div>
+                        <div class="flex justify-between pt-2"><span>Horas técnicas configuración Moodle (Carga Docente)</span><span class="text-stone-500 uppercase font-mono">ARS 0 (Voluntario)</span></div>
+                        <div class="flex justify-between pt-2"><span>Viáticos para un autor externo de renombre (Opcional)</span><span class="text-white">ARS 60.000 approx.</span></div>
+                    </div>
+                </div>
+                <div class="border-t border-stone-800 pt-4 mt-6 flex justify-between items-baseline">
+                    <span class="text-xs uppercase font-mono text-stone-400 font-bold">Inversión Total Estimada:</span>
+                    <span class="text-2xl font-serif font-bold text-amber-400">ARS 125.000</span>
+                </div>
+            </div>
+
+            <div class="bg-white border border-stone-200 p-6 rounded-2xl flex flex-col justify-between shadow-xs">
+                <div>
+                    <h4 class="font-serif text-lg text-stone-900 font-bold mb-2">Viabilidad y Alianzas del Entorno</h4>
+                    <p class="text-stone-600 text-xs leading-relaxed mb-4">
+                        Se han mantenido reuniones y conversaciones exploratorias exitosas con la Dirección de las distintas Facultades presentes en la UCU, tanto en modalidad presencial como con el Área de Virtual. Ambas instancias técnicas expresaron gran interés y comprometieron apoyo logístico inicial. El plan será elevado formalmente a las autoridades rectorales una vez cumplimentada esta fase evaluativa formativa.
+                    </p>
+                </div>
+                <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-[11px] font-medium text-amber-900 leading-relaxed">
+                    <i class="fas fa-handshake mr-1.5"></i><strong>Vinculación con el Entorno Local (Brunner y Villalobos, 2014):</strong> El plan integra activamente alianzas estratégicas con librerías de la región, editoriales y colegios profesionales locales como condición de pertinencia social y sostenibilidad temporal institucional.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-950 text-stone-400 py-16 px-6 border-t border-stone-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <div>
+                <h4 class="font-serif text-xl font-bold text-white mb-2">Autores del Plan de Mejora Institucional</h4>
+                <p class="text-xs text-stone-500 max-w-xl mb-4">Proyecto interdisciplinar desarrollado colectivamente en el tramo final de la formación académica docente universitaria de la UCU. Mayo 2026.</p>
+                
+                <div class="flex flex-wrap gap-2 text-[11px] font-semibold text-stone-200">
+                    <span class="bg-stone-900 border border-stone-800 px-3 py-1.5 rounded-md"><i class="fas fa-user text-amber-500 mr-1.5 text-[9px]"></i>Diego Albeira (Nutricionista Presencial)</span>
+                    <span class="bg-stone-900 border border-stone-800 px-3 py-1.5 rounded-md"><i class="fas fa-user text-amber-500 mr-1.5 text-[9px]"></i>Elizabeth Cummins (Nutricionista Virtual)</span>
+                    <span class="bg-stone-900 border border-stone-800 px-3 py-1.5 rounded-md"><i class="fas fa-user text-amber-500 mr-1.5 text-[9px]"></i>Cintia Principi (Biotecnóloga)</span>
+                    <span class="bg-stone-900 border border-stone-800 px-3 py-1.5 rounded-md"><i class="fas fa-user text-amber-500 mr-1.5 text-[9px]"></i>Sofía Chaia (Psicopedagoga)</span>
+                </div>
+            </div>
+
+            <div class="text-left md:text-right text-xs">
+                <span class="block font-mono text-[10px] uppercase text-amber-400 tracking-widest font-bold mb-1">Entidad Convocante</span>
+                <span class="block text-white font-semibold">Universidad de Concepción del Uruguay</span>
+                <span class="block text-stone-500">Entre Ríos, Argentina — Año 2026</span>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto border-t border-stone-900 mt-12 pt-6 text-center text-[11px] text-stone-750">
+            Guía y recurso interactivo para la defensa de la propuesta. Código limpio adaptado para visualización ágil en servidores estáticos y GitHub Pages.
         </div>
     </footer>
 
     <script>
-        function switchTab(tabId) {
-            // Ocultar todos los bloques de contenido
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
+        function cambiarPestana(idPestana) {
+            // Ocultar todos los bloques de contenido teóricos
+            const bloques = document.querySelectorAll('.tab-content');
+            bloques.forEach(bloque => bloque.classList.remove('active'));
 
-            // Resetear todos los botones de pestañas a estado inactivo
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-white', 'shadow-xs', 'text-amber-900', 'font-semibold');
+            // Resetear visualmente todos los selectores de pestañas a modo inactivo
+            const botones = document.querySelectorAll('.tab-btn');
+            botones.forEach(btn => {
+                btn.classList.remove('bg-white', 'shadow-xs', 'text-amber-950');
                 btn.classList.add('text-stone-600', 'hover:text-stone-900');
             });
 
-            // Mostrar el contenido seleccionado
-            document.getElementById(tabId).classList.add('active');
+            // Mostrar el bloque de contenido interactivo seleccionado
+            document.getElementById(idPestana).classList.add('active');
 
-            // Resaltar el botón activo
-            const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.classList.remove('text-stone-600', 'hover:text-stone-900');
-            activeBtn.classList.add('bg-white', 'shadow-xs', 'text-amber-900', 'font-semibold');
+            // Asignar el estilo activo destacado al botón presionado
+            const botonPresionado = document.getElementById('btn-' + idPestana);
+            botonPresionado.classList.remove('text-stone-600', 'hover:text-stone-900');
+            botonPresionado.classList.add('bg-white', 'shadow-xs', 'text-amber-950');
         }
     </script>
 </body>
